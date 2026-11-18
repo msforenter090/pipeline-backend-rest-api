@@ -1,0 +1,61 @@
+[DOCUMENT]
+TITLE: REQ-ARI-004 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-004.AC-1
+STATEMENT: Division with a = "10" and b = "4" gives "2.5", and with a = "1" and b = "8" gives "0.125".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-004
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-004.AC-2
+STATEMENT: Division with a = "1" and b = "3" gives "0.33333333333333333333" (20 fractional digits).
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-004
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-004.AC-3
+STATEMENT: Division with a = "2" and b = "3" gives "0.66666666666666666667", and with a = "-2" and b = "3" gives "-0.66666666666666666667".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-004
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-004.AC-4
+STATEMENT: Division with a = "1" and b = "200000000000000000000" (a tie at the 21st fractional digit) gives "0.00000000000000000001", and with a = "-1" gives "-0.00000000000000000001".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-004
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-004.AC-5
+STATEMENT: Division with a = "1" and b = "300000000000000000000" (quotient below half of the last digit kept) gives "0".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-004
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-004.AC-6
+STATEMENT: Division with a = "123456789012345678901234567890" and b = "2" gives "61728394506172839450617283945".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-004
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-004.AC-7
+STATEMENT: Division with a = "0" and b = "5" gives "0".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-004

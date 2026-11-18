@@ -1,0 +1,123 @@
+[GRAMMAR]
+ELEMENTS:
+- TAG: SECTION
+  PROPERTIES:
+    IS_COMPOSITE: True
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+- TAG: REQUIREMENT
+  PROPERTIES:
+    VIEW_STYLE: Table
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: VERSION
+    TYPE: String
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: KIND
+    TYPE: SingleChoice(functional, non-functional, constraint)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(draft, review, approved, deprecated)
+    REQUIRED: True
+  - TITLE: PRIORITY
+    TYPE: SingleChoice(high, medium, low)
+    REQUIRED: True
+  - TITLE: SAFETY
+    TYPE: SingleChoice(QM, ASIL A, ASIL B, ASIL C, ASIL D, SIL 1, SIL 2, SIL 3, SIL 4)
+    REQUIRED: True
+  - TITLE: RELEASE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMPONENT
+    TYPE: String
+    REQUIRED: False
+  - TITLE: VERIFICATION
+    TYPE: SingleChoice(test, analysis, inspection, demonstration)
+    REQUIRED: True
+  - TITLE: VERIF_LEVELS
+    HUMAN_TITLE: Verif. level
+    TYPE: MultipleChoice(unit, integration, system)
+    REQUIRED: True
+  - TITLE: TAGS
+    TYPE: Tag
+    REQUIRED: False
+  - TITLE: SOURCE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: OWNER
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CREATED
+    TYPE: String
+    REQUIRED: True
+  - TITLE: APPROVED_BY
+    HUMAN_TITLE: Approved by
+    TYPE: String
+    REQUIRED: False
+  - TITLE: APPROVED_AT
+    HUMAN_TITLE: Approved at
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: NOTES
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+- TAG: ACCEPTANCE_CRITERION
+  PROPERTIES:
+    VIEW_STYLE: Table
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    HUMAN_TITLE: Criterion
+    TYPE: String
+    REQUIRED: True
+  - TITLE: VERIF_LEVELS
+    HUMAN_TITLE: Verif. level
+    TYPE: MultipleChoice(unit, integration, system)
+    REQUIRED: True
+  RELATIONS:
+  - TYPE: Parent
+- TAG: SCENARIO
+  PROPERTIES:
+    VIEW_STYLE: Table
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: KIND
+    TYPE: SingleChoice(Scenario, Scenario Outline)
+    REQUIRED: True
+  - TITLE: LOCATION
+    TYPE: String
+    REQUIRED: True
+  - TITLE: TAG_VERSION
+    HUMAN_TITLE: Written against version
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STEPS
+    TYPE: String
+    REQUIRED: True
+  RELATIONS:
+  - TYPE: Parent

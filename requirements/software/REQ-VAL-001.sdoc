@@ -1,0 +1,47 @@
+[DOCUMENT]
+TITLE: REQ-VAL-001 · Reject invalid operands
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: REQ-VAL-001
+VERSION: 1
+TITLE: Reject invalid operands
+STATEMENT: >>>
+If an operand of a calculation request is missing, is not a JSON string, or
+is not a string number of at most **1000** characters, then the service
+**shall** reject the request with the error code `INVALID_NUMBER`.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: unit, system
+TAGS: validation
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+A strict, simple number format means every accepted input has exactly one
+meaning. JSON numbers are rejected because many JSON parsers turn them
+into floating point and lose digits before the service sees them. The
+length limit keeps the time and memory per request bounded.
+<<<
+NOTES: >>>
+- The format of a *string number* is defined in the glossary: an optional
+  sign, one or more digits, and optionally a decimal point followed by one
+  or more digits. Regular expression: `^[+-]?[0-9]+(\.[0-9]+)?$`.
+- Leading zeros (`007`), a plus sign (`+1`), negative zero (`-0`) and
+  trailing fractional zeros (`1.50`) are valid input.
+- Not valid: empty string, whitespace anywhere, exponents (`1e5`), digit
+  group separators (`1,000`), a comma as decimal separator (`1,5`), a
+  missing integer or fraction part (`.5`, `5.`), `NaN`, `Infinity`.
+- The limit of 1000 characters is *proposed* and must be confirmed.
+- The `message` names which operand (`a` or `b`) was rejected.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-VAL-001

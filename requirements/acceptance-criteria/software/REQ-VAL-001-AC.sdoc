@@ -1,0 +1,53 @@
+[DOCUMENT]
+TITLE: REQ-VAL-001 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-001.AC-1
+STATEMENT: A request without the field "a", or without the field "b", is rejected with the error code INVALID_NUMBER.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-001.AC-2
+STATEMENT: A request where "a" or "b" is a JSON number (5), boolean, null, array or object instead of a JSON string is rejected with the error code INVALID_NUMBER.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-001.AC-3
+STATEMENT: Each of the operands "", " 1", "1 ", "abc", "1e5", "1,000", "1,5", ".5", "5.", "--1", "+-1", "1.2.3", "0x10", "NaN" and "Infinity" is rejected with the error code INVALID_NUMBER.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-001.AC-4
+STATEMENT: An operand of 1000 characters is accepted, and an operand of 1001 characters is rejected with the error code INVALID_NUMBER.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-001.AC-5
+STATEMENT: Each of the operands "+1", "-0", "007" and "1.50" is accepted.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-001.AC-6
+STATEMENT: The message of an INVALID_NUMBER error response names the rejected operand ("a" or "b").
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-001

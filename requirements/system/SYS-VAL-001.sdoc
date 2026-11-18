@@ -1,0 +1,35 @@
+[DOCUMENT]
+TITLE: SYS-VAL-001 · Reject invalid calculations
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: SYS-VAL-001
+VERSION: 1
+TITLE: Reject invalid calculations
+STATEMENT: >>>
+If a calculation request contains an operand that is not a valid string
+number, or asks for a division by zero, then the service **shall** respond
+with an error response that contains an error code and no result.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: system
+TAGS: validation, api
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+A client must never receive a result it could mistake for a correct one.
+An error code lets the client react to the reason without parsing text.
+<<<
+NOTES: >>>
+- The error response format, the error codes and the exact validation rules
+  are defined at software level. See child requirements REQ-API-002,
+  REQ-VAL-001 and REQ-VAL-002.
+<<<

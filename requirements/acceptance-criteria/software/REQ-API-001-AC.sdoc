@@ -1,0 +1,53 @@
+[DOCUMENT]
+TITLE: REQ-API-001 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-001.AC-1
+STATEMENT: A valid addition request is answered with HTTP status 200, Content-Type application/json, and a JSON object whose only field is "result", holding a JSON string.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-001.AC-2
+STATEMENT: The same request body sent to /api/v1/add, /api/v1/subtract, /api/v1/multiply and /api/v1/divide is answered with the sum, difference, product and quotient of a and b respectively.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-001.AC-3
+STATEMENT: Every result is a canonical decimal string: "1.50" + "1.50" gives "3", "007" + "0" gives "7", and "-0" + "0" gives "0".
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-001.AC-4
+STATEMENT: A POST to /api/v1/<operation> with an operation other than add, subtract, multiply or divide is answered with HTTP status 404 and no result.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-001.AC-5
+STATEMENT: A request to /api/v1/add with a method other than POST (GET, PUT, DELETE) is answered with HTTP status 405 and no result.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-001.AC-6
+STATEMENT: A request body with fields in addition to "a" and "b" is calculated as if the extra fields were absent.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-001

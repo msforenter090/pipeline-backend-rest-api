@@ -1,0 +1,53 @@
+[DOCUMENT]
+TITLE: REQ-ARI-003 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-003.AC-1
+STATEMENT: Multiplication of "2" and "3" gives "6".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-003
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-003.AC-2
+STATEMENT: Multiplication of "-1.5" and "2" gives "-3", and of "-2" and "-3" gives "6".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-003
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-003.AC-3
+STATEMENT: Multiplication of "0.1" and "0.1" gives "0.01".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-003
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-003.AC-4
+STATEMENT: Multiplication of "0" and "-5" gives "0".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-003
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-003.AC-5
+STATEMENT: Multiplication of "123456789012345678901234567890" and "987654321098765432109876543210" gives "121932631137021795226185032733622923332237463801111263526900".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-003
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-003.AC-6
+STATEMENT: Multiplication of two operands of 1000 characters each gives the exact product.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-003

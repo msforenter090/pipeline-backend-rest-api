@@ -1,0 +1,29 @@
+[DOCUMENT]
+TITLE: SYS-VAL-001 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-VAL-001.AC-1
+STATEMENT: A calculation request with the operand "abc" is answered with an error response and no result.
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-VAL-001
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-VAL-001.AC-2
+STATEMENT: A division request with the divisor "0" is answered with an error response and no result.
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-VAL-001
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-VAL-001.AC-3
+STATEMENT: After an error response, the next valid calculation request is answered with its correct result.
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-VAL-001

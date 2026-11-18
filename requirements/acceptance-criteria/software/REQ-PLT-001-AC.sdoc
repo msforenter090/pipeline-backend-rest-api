@@ -1,0 +1,21 @@
+[DOCUMENT]
+TITLE: REQ-PLT-001 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-PLT-001.AC-1
+STATEMENT: The build produces an executable Spring Boot application archive that starts with "java -jar <archive>" and answers calculation requests.
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-PLT-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-PLT-001.AC-2
+STATEMENT: The started application listens on port 8080 unless another port is set with the Spring Boot property server.port.
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-PLT-001

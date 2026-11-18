@@ -1,0 +1,45 @@
+[DOCUMENT]
+TITLE: REQ-ARI-002 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-002.AC-1
+STATEMENT: Subtraction of "3" from "5" (a = "5", b = "3") gives "2".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-002.AC-2
+STATEMENT: Subtraction with a = "3" and b = "5" gives "-2".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-002.AC-3
+STATEMENT: Subtraction with a = "1.0" and b = "0.9" gives "0.1".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-002.AC-4
+STATEMENT: Subtraction with a = "123456789012345678901234567890" and b = "987654321098765432109876543210" gives "-864197532086419753208641975320".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-002.AC-5
+STATEMENT: Subtraction with equal operands a = "4.25" and b = "4.25" gives "0".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-002

@@ -1,0 +1,2 @@
+# Python tools for doc/. Install with: make setup
+strictdoc==0.30.4

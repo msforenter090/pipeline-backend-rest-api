@@ -1,0 +1,45 @@
+[DOCUMENT]
+TITLE: REQ-VAL-002 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-002.AC-1
+STATEMENT: A division request with b = "0" is rejected with the error code DIVISION_BY_ZERO.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-002.AC-2
+STATEMENT: A division request with b equal to "-0", "+0", "000" or "0.000" is rejected with the error code DIVISION_BY_ZERO.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-002.AC-3
+STATEMENT: A division request with a = "0" and b = "0" is rejected with the error code DIVISION_BY_ZERO.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-002.AC-4
+STATEMENT: A division request with a = "abc" and b = "0" is rejected with the error code INVALID_NUMBER.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-VAL-002.AC-5
+STATEMENT: Addition, subtraction and multiplication requests with b = "0" are not rejected.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-VAL-002

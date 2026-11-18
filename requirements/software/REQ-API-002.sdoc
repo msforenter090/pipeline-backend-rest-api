@@ -1,0 +1,41 @@
+[DOCUMENT]
+TITLE: REQ-API-002 · Error responses
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: REQ-API-002
+VERSION: 1
+TITLE: Error responses
+STATEMENT: >>>
+If the service rejects a calculation request, then the service **shall**
+respond with HTTP status **400** and the JSON body
+`{"error": <error code>, "message": <text>}`.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: integration, system
+TAGS: api, http, json, validation
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+One error format for every rejected request lets clients handle all errors
+in one place. The error code is stable and meant for programs; the message
+is meant for people and may change.
+<<<
+NOTES: >>>
+- Error codes are defined in the glossary: `INVALID_NUMBER`,
+  `DIVISION_BY_ZERO`, `MALFORMED_REQUEST`.
+- The message is in English. Its exact text is not specified.
+- Requests to unknown paths and with methods other than `POST` are not
+  calculation requests; see REQ-API-001 AC-4 and AC-5.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-VAL-001

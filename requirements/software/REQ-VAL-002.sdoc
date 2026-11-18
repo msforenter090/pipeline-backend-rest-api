@@ -1,0 +1,39 @@
+[DOCUMENT]
+TITLE: REQ-VAL-002 · Reject division by zero
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: REQ-VAL-002
+VERSION: 1
+TITLE: Reject division by zero
+STATEMENT: >>>
+If a division request has valid operands and a divisor `b` whose value is
+zero, then the service **shall** reject the request with the error code
+`DIVISION_BY_ZERO`.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: unit, system
+TAGS: validation, division
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+Division by zero has no result. A dedicated error code tells the client the
+input was well formed but cannot be divided.
+<<<
+NOTES: >>>
+- The value counts, not the spelling: `0`, `-0`, `+0`, `000` and `0.000`
+  are all zero.
+- If an operand is also invalid, `INVALID_NUMBER` (REQ-VAL-001) is
+  returned instead.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-VAL-001

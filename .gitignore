@@ -1,0 +1,22 @@
+# Python virtual environment (make setup)
+env/
+
+# Generated output (make tests / make export)
+build/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Java / Spring Boot build output
+target/
+.gradle/
+out/
+*.class
+*.log
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store

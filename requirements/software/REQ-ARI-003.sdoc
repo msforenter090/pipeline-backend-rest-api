@@ -1,0 +1,37 @@
+[DOCUMENT]
+TITLE: REQ-ARI-003 · Multiplication
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: REQ-ARI-003
+VERSION: 1
+TITLE: Multiplication
+STATEMENT: >>>
+When the service receives a valid multiplication request, the service
+**shall** return the exact product `a × b`.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: unit, system
+TAGS: arithmetic, multiplication
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+The product of two decimal numbers always has a finite decimal form, so it
+can be returned without rounding.
+<<<
+NOTES: >>>
+- Exact means: no digit is lost or rounded, for operands of any length
+  allowed by REQ-VAL-001. The product of two 1000-character operands has
+  at most 2000 digits.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001

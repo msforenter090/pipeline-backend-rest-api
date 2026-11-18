@@ -1,0 +1,45 @@
+[DOCUMENT]
+TITLE: SYS-ARI-001 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-ARI-001.AC-1
+STATEMENT: An addition request with operands "2" and "3" is answered with the result "5".
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-ARI-001.AC-2
+STATEMENT: A subtraction request with operands "2" and "3" is answered with the result "-1".
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-ARI-001.AC-3
+STATEMENT: A multiplication request with operands "2" and "3" is answered with the result "6".
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-ARI-001.AC-4
+STATEMENT: A division request with operands "3" and "2" is answered with the result "1.5".
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: SYS-ARI-001.AC-5
+STATEMENT: Operands with more digits than a 64-bit integer or a double can hold (at least 30 digits) give a result without any lost digit.
+VERIF_LEVELS: system
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001

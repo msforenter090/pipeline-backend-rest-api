@@ -1,0 +1,41 @@
+[DOCUMENT]
+TITLE: SYS-ARI-001 · Calculate with string numbers
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: SYS-ARI-001
+VERSION: 1
+TITLE: Calculate with string numbers
+STATEMENT: >>>
+When a client sends a calculation request with two valid string numbers and
+one of the operations addition, subtraction, multiplication or division, the
+service **shall** respond with the result of that operation as a string
+number.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: system
+TAGS: arithmetic, api
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+Clients need to calculate with numbers that are too long or too precise for
+the number types of their own platforms (for example 64-bit integers or
+floating point). Passing numbers as strings keeps every digit.
+<<<
+NOTES: >>>
+- The service keeps no state between requests. Nothing is stored, and there
+  is no user interface; the HTTP API is the only interface.
+- The request and response format and the exact rules per operation are
+  defined at software level. See child requirements REQ-API-001 and
+  REQ-ARI-001 to REQ-ARI-004.
+- Terms *client*, *service*, *calculation request*, *operand* and *string
+  number* are defined in the glossary.
+<<<

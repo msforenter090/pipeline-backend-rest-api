@@ -1,0 +1,45 @@
+[DOCUMENT]
+TITLE: REQ-ARI-001 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-001.AC-1
+STATEMENT: Addition of "2" and "3" gives "5".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-001.AC-2
+STATEMENT: Addition of "0.1" and "0.2" gives "0.3" (no binary floating-point error).
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-001.AC-3
+STATEMENT: Addition of "-5" and "3" gives "-2", and of "-1.5" and "1.5" gives "0".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-001.AC-4
+STATEMENT: Addition of "123456789012345678901234567890" and "987654321098765432109876543210" gives "1111111110111111111011111111100".
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-001
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-ARI-001.AC-5
+STATEMENT: Addition of two operands of 1000 characters each gives the exact sum.
+VERIF_LEVELS: unit, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-ARI-001

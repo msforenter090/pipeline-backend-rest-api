@@ -1,0 +1,36 @@
+[DOCUMENT]
+TITLE: REQ-PLT-001 · Spring Boot web application
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: REQ-PLT-001
+VERSION: 1
+TITLE: Spring Boot web application
+STATEMENT: >>>
+The service **shall** be built as a Spring Boot web application.
+<<<
+KIND: constraint
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: inspection
+VERIF_LEVELS: system
+TAGS: platform, spring-boot
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+Spring Boot is the platform chosen by the stakeholder for running and
+operating the service.
+<<<
+NOTES: >>>
+- **TBD:** language and versions. *Proposed:* Java 21, Spring Boot 3.x,
+  built with Maven or Gradle.
+- Code structure, coding standard and design are set by the development
+  team in the architecture documents (planned), not here.
+- This constraint comes directly from the stakeholder and has no parent
+  system requirement.
+<<<

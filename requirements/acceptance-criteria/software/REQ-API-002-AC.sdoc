@@ -1,0 +1,37 @@
+[DOCUMENT]
+TITLE: REQ-API-002 · Acceptance criteria
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-002.AC-1
+STATEMENT: Every rejected calculation request is answered with HTTP status 400, Content-Type application/json, and a JSON object with exactly the fields "error" and "message", both JSON strings.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-002.AC-2
+STATEMENT: The "message" field of an error response is not empty.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-002.AC-3
+STATEMENT: A request body that is not valid JSON, or is valid JSON but not a JSON object, is rejected with the error code MALFORMED_REQUEST.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-002
+
+[ACCEPTANCE_CRITERION]
+UID: REQ-API-002.AC-4
+STATEMENT: An error response contains no "result" field.
+VERIF_LEVELS: integration, system
+RELATIONS:
+- TYPE: Parent
+  VALUE: REQ-API-002

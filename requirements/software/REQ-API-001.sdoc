@@ -1,0 +1,43 @@
+[DOCUMENT]
+TITLE: REQ-API-001 · Calculation endpoints
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: REQ-API-001
+VERSION: 1
+TITLE: Calculation endpoints
+STATEMENT: >>>
+The service **shall** accept a calculation request as an HTTP `POST` to
+`/api/v1/<operation>`, where `<operation>` is `add`, `subtract`, `multiply`
+or `divide`, with the JSON body `{"a": <operand>, "b": <operand>}`, and
+answer a valid request with HTTP status **200** and the JSON body
+`{"result": <canonical decimal string>}`.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: integration, system
+TAGS: api, http, json
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+One endpoint per operation with the same body keeps the API small and easy
+to call from any HTTP client. A canonical result lets clients compare
+results as plain strings.
+<<<
+NOTES: >>>
+- `a` is the first operand and `b` the second: the service calculates
+  `a + b`, `a − b`, `a × b` and `a ÷ b`.
+- Request and response bodies use `Content-Type: application/json`.
+- Unknown fields in the request body are ignored.
+- Invalid requests are answered as defined in REQ-API-002.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001

@@ -1,0 +1,36 @@
+[DOCUMENT]
+TITLE: REQ-ARI-002 · Subtraction
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @requirements
+
+[REQUIREMENT]
+UID: REQ-ARI-002
+VERSION: 1
+TITLE: Subtraction
+STATEMENT: >>>
+When the service receives a valid subtraction request, the service
+**shall** return the exact difference `a − b`.
+<<<
+KIND: functional
+STATUS: draft
+PRIORITY: high
+SAFETY: QM
+RELEASE: 1.0.0
+VERIFICATION: test
+VERIF_LEVELS: unit, system
+TAGS: arithmetic, subtraction
+SOURCE: Stakeholder request, 2026-11-18
+OWNER: msforenter090
+CREATED: 2026-11-18T00:00:00Z
+RATIONALE: >>>
+The difference of two decimal numbers always has a finite decimal form, so
+it can be returned without rounding.
+<<<
+NOTES: >>>
+- Exact means: no digit is lost or rounded, for operands of any length
+  allowed by REQ-VAL-001.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SYS-ARI-001
